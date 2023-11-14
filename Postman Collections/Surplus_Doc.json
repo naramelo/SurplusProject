@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "226d7717-c644-4592-82be-8318ec8591b4",
+		"name": "Testing Surplus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Cases 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55ba1405-bc47-4edc-a0a4-24d7fcee2f6a",
+						"exec": [
+							"//GET ALL POST \r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bf70b256-a94c-4801-8f4d-174e55e91bbc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Cases 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e17c1059-e272-43fd-ba2b-4aab437190c5",
+						"exec": [
+							"//GET ONE POST ID\r",
+							"\r",
+							"var postId = 11;\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Post ID\", function () {\r",
+							"    pm.expect(pm.response.json().id).to.equal(postId);\r",
+							" });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4564f19b-2cd2-430b-b4d1-5a83b0eee490",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts/11"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Cases 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25542eac-f063-4756-ad0b-da664cfee7b9",
+						"exec": [
+							"//POST \r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8985b941-6ba2-4317-9438-bb7902a88bff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 11,\r\n        \"id\": 1,\r\n        \"title\": \"haii sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\r\n        \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Cases 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4edfb216-1b0a-4f16-8975-29359a01b480",
+						"exec": [
+							"//PUT\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7b137de0-859f-4a1e-91be-819682df9569",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"userId\": 1,\r\n        \"id\": 2,\r\n        \"title\": \"halooo ini testing qui est esse\",\r\n        \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts/2"
+			},
+			"response": []
+		},
+		{
+			"name": "TEST CASES 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc600b99-a702-4895-afbc-62aff1f65687",
+						"exec": [
+							"//Delete\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.expect(data).to.be.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ed56adb7-2e3f-4cc0-b0bf-e30979e5e002",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts/8"
+			},
+			"response": []
+		}
+	]
+}
